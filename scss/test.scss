@@ -1,0 +1,24 @@
+.drag{
+    width: 400px;
+    height: 70px;
+    background: #ddd;
+    position: relative;
+    border: 1px solid #eee;
+    .text{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 70px;
+    }
+    .btn{
+        width: 70px;
+        height: 100%;
+        line-height: 70px;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #fff;
+        cursor: move;
+    }
+}
