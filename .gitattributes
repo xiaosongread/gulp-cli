@@ -1,0 +1,9 @@
+*.js linguist-language=gulp
+
+*.css linguist-language=gulp
+
+*.html linguist-language=gulp
+
+*.md linguist-language=gulp
+
+*.scss linguist-language=gulp
