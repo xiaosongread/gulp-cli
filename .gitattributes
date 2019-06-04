@@ -1,9 +1,9 @@
-*.js linguist-language=Gulp
+*.js linguist-language=JavaScript
 
-*.css linguist-language=Gulp
+*.css linguist-language=JavaScript
 
-*.html linguist-language=Gulp
+*.html linguist-language=JavaScript
 
-*.md linguist-language=Gulp
+*.md linguist-language=JavaScript
 
-*.scss linguist-language=Gulp
+*.scss linguist-language=JavaScript
