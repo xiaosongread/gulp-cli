@@ -16,12 +16,16 @@ gulp.task('prew', function () {
                 .pipe($.connect.reload());
 })
 // scss
+function notify(err) {
+    // prevent gulp process exit
+    this.emit('end');
+}
 gulp.task("sass",function(){
     return gulp.src('scss/**/*.scss')
                .pipe($.sass())
+               .on('error', notify)
                .pipe($.minifyCss())
                .pipe(gulp.dest('dist/css'))
-               .pipe($.connect.reload());
 })
 
 gulp.task("buildJs",function(){
@@ -48,8 +52,9 @@ gulp.task('watch',function(){
 })
 gulp.task('server',function(){
     $.connect.server({
-        root: 'dist',
+        root: './dist',
         port: '8888',
+        open: true,
         livereload: true //实时刷新开关
     })
 })
