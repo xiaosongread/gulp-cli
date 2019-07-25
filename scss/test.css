@@ -94,3 +94,46 @@ body {
   border-radius: 100%;
   border-right-color: transparent;
 }
+
+@keyframes rotate_3 {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+.demo_3:hover .pacman_1 {
+  animation: rotate_3 1s linear infinite;
+  -webkit-animation: rotate_3 1s linear infinite;
+}
+
+.demo_3 .pacman_box {
+  position: relative;
+}
+
+.demo_3 .pacman_box .pacman_1 {
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  border: 32px solid #fff;
+  border-right-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.demo_3 .pacman_box .pacman_2 {
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  border: 32px solid #fff;
+  border-right-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
