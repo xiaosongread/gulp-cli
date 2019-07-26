@@ -95,21 +95,74 @@ body {
   border-right-color: transparent;
 }
 
-@keyframes rotate_3 {
-  0% {
+@keyframes rotate_3_1 {
+  from {
     transform: rotate(45deg);
   }
-  50% {
-    transform: rotate(90deg);
+  to {
+    transform: rotate(0deg);
   }
-  100% {
-    transform: rotate(45deg);
+}
+
+@keyframes rotate_3_2 {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes circle_1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes circle_2 {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes circle_3 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
 .demo_3:hover .pacman_1 {
-  animation: rotate_3 1s linear infinite;
-  -webkit-animation: rotate_3 1s linear infinite;
+  animation: rotate_3_1 0.5s linear infinite alternate;
+  -webkit-animation: rotate_3_1 0.5s linear infinite alternate;
+}
+
+.demo_3:hover .pacman_2 {
+  animation: rotate_3_2 0.5s linear infinite alternate;
+  -webkit-animation: rotate_3_2 0.5s linear infinite alternate;
+}
+
+.demo_3:hover .circle_1 {
+  animation: circle_1 0.5s linear infinite alternate;
+  -webkit-animation: circle_1 0.5s linear infinite alternate;
+}
+
+.demo_3:hover .circle_2 {
+  animation: circle_2 0.5s linear infinite alternate;
+  -webkit-animation: circle_2 0.5s linear infinite alternate;
+}
+
+.demo_3:hover .circle_3 {
+  animation: circle_3 0.5s linear infinite alternate;
+  -webkit-animation: circle_3 0.5s linear infinite alternate;
 }
 
 .demo_3 .pacman_box {
@@ -125,6 +178,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  transform: rotate(45deg);
 }
 
 .demo_3 .pacman_box .pacman_2 {
@@ -136,4 +190,157 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  transform: rotate(-45deg);
+}
+
+.demo_3 .pacman_box .circle_1 {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  position: absolute;
+  top: 25px;
+  right: 65px;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.demo_3 .pacman_box .circle_2 {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  border-radius: 100%;
+  opacity: 0.5;
+}
+
+.demo_3 .pacman_box .circle_3 {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  position: absolute;
+  top: 25px;
+  right: 5px;
+  border-radius: 100%;
+}
+
+@keyframes demo4_circle_1 {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    opacity: .5;
+  }
+  25% {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    opacity: .5;
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    opacity: .5;
+  }
+  75% {
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    opacity: 1;
+  }
+}
+
+@keyframes demo4_circle_2 {
+  0% {
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    opacity: .5;
+  }
+  100% {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    opacity: .5;
+  }
+}
+
+.demo_4:hover .demo4_circle_1 {
+  animation: demo4_circle_1 4s linear infinite alternate;
+  -webkit-animation: demo4_circle_1 4s linear infinite alternate;
+}
+
+.demo_4:hover .demo4_circle_2 {
+  animation: demo4_circle_1 4s linear infinite alternate;
+  -webkit-animation: demo4_circle_1 4s linear infinite alternate;
+}
+
+.demo_4 .demo4_circle_box {
+  position: relative;
+}
+
+.demo_4 .demo4_circle_box .demo4_circle_1 {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 100%;
+  position: absolute;
+  left: 15px;
+  opacity: .5;
+}
+
+.demo_4 .demo4_circle_box .demo4_circle_2 {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  transform: scale(0.5);
+  border-radius: 100%;
+  position: absolute;
+  left: 15px;
 }
