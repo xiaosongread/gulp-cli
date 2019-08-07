@@ -36,16 +36,6 @@ body{
 }
 // ----  1  ----
 .demo_1{
-    &:hover{
-        .redius_1_1{
-            animation: rotate-redius_1 2s linear infinite;
-            -webkit-animation: rotate-redius_1 2s linear infinite;
-        }
-        .redius_1_2{
-            animation: rotate-redius_2 1s linear infinite;
-            -webkit-animation: rotate-redius_2 1s linear infinite;
-        }
-    }
     .demo_1_box{
         position: relative;
         top: 28px;
@@ -62,6 +52,8 @@ body{
         border-bottom-color: transparent;
         border-top-color: transparent;
         transform:rotate(30deg);
+        animation: rotate-redius_1 2s linear infinite;
+        -webkit-animation: rotate-redius_1 2s linear infinite;
     }
     .redius_1_2{
         width: 30px;
@@ -75,6 +67,8 @@ body{
         border-top-color: transparent;
         border-radius: 100%;
         transform:rotate(-30deg);
+        animation: rotate-redius_2 1s linear infinite;
+        -webkit-animation: rotate-redius_2 1s linear infinite;
     }
 }
 // ----  2  ----
@@ -90,18 +84,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    &:hover{
-        .redius_2_1{
-            animation: rotate_2 1s linear infinite;
-            -webkit-animation: rotate_2 1s linear infinite;
-        }
-    }
     .redius_2_1{
         width: 64px;
         height: 64px;
         border: 4px solid #fff;
         border-radius: 100%;
         border-right-color: transparent;
+        animation: rotate_2 1s linear infinite;
+        -webkit-animation: rotate_2 1s linear infinite;
     }
 }
 // ----  3  ----
@@ -146,28 +136,6 @@ body{
     }
 }
 .demo_3{
-    &:hover{
-        .pacman_1{
-            animation: rotate_3_1 0.5s linear infinite alternate;
-            -webkit-animation: rotate_3_1 0.5s linear infinite alternate;
-        }
-        .pacman_2{
-            animation: rotate_3_2 0.5s linear infinite alternate;
-            -webkit-animation: rotate_3_2 0.5s linear infinite alternate;
-        }
-        .circle_1{
-            animation: circle_1 0.5s linear infinite alternate;
-            -webkit-animation: circle_1 0.5s linear infinite alternate;
-        }
-        .circle_2{
-            animation: circle_2 0.5s linear infinite alternate;
-            -webkit-animation: circle_2 0.5s linear infinite alternate;
-        }
-        .circle_3{
-            animation: circle_3 0.5s linear infinite alternate;
-            -webkit-animation: circle_3 0.5s linear infinite alternate;
-        }
-    }
     .pacman_box{
         position: relative;
         top: 32px;
@@ -181,6 +149,8 @@ body{
             top: 0;
             left: 0;
             transform: rotate(45deg);
+            animation: rotate_3_1 0.5s linear infinite alternate;
+            -webkit-animation: rotate_3_1 0.5s linear infinite alternate;
         }
         .pacman_2{
             width: 0;
@@ -192,6 +162,8 @@ body{
             top: 0;
             left: 0;
             transform: rotate(-45deg);
+            animation: rotate_3_2 0.5s linear infinite alternate;
+            -webkit-animation: rotate_3_2 0.5s linear infinite alternate;
         }
         .circle_1{
             width: 14px;
@@ -202,6 +174,8 @@ body{
             right: 65px;
             border-radius: 100%;
             opacity: 0;
+            animation: circle_1 0.5s linear infinite alternate;
+            -webkit-animation: circle_1 0.5s linear infinite alternate;
         }
         .circle_2{
             width: 14px;
@@ -212,6 +186,8 @@ body{
             right: 35px;
             border-radius: 100%;
             opacity: 0.5;
+            animation: circle_2 0.5s linear infinite alternate;
+            -webkit-animation: circle_2 0.5s linear infinite alternate;
         }
         .circle_3{
             width: 14px;
@@ -221,6 +197,8 @@ body{
             top: 25px;
             right: 5px;
             border-radius: 100%;
+            animation: circle_3 0.5s linear infinite alternate;
+            -webkit-animation: circle_3 0.5s linear infinite alternate;
         }
     }
 }
@@ -262,16 +240,6 @@ body{
     }
 }
 .demo_4{
-    &:hover{
-        .demo4_circle_1{
-            animation: demo4_circle_1 1s linear infinite alternate;
-            -webkit-animation: demo4_circle_1 1s linear infinite alternate;
-        }
-        .demo4_circle_2{
-            animation: demo4_circle_2 1s linear infinite alternate;
-            -webkit-animation: demo4_circle_2 1s linear infinite alternate;
-        }
-    }
     .demo4_circle_box{
         position: relative;
         top: 28px;
@@ -284,6 +252,8 @@ body{
             position: absolute;
             left: 15px;
             opacity: .5;
+            animation: demo4_circle_1 1s linear infinite alternate;
+            -webkit-animation: demo4_circle_1 1s linear infinite alternate;
         }
         .demo4_circle_2{
             width: 64px;
@@ -297,7 +267,9 @@ body{
             -moz-transform:scale(0);
             -ms-transform:scale(0);
             -o-transform:scale(0);
-}
+            animation: demo4_circle_2 1s linear infinite alternate;
+            -webkit-animation: demo4_circle_2 1s linear infinite alternate;
+        }
     }
 }
 // ----    ----
@@ -404,20 +376,6 @@ body{
     }
 }
 .demo_5{
-    &:hover {
-        .demo5_circle_1 {
-            animation: demo5_circle_1 1s linear infinite normal;
-            -webkit-animation: demo5_circle_1 1s linear infinite normal;
-}
-        .demo5_circle_2 {
-            animation: demo5_circle_2 1s linear infinite normal;
-            -webkit-animation: demo5_circle_2 1s linear infinite normal;
-}
-        .demo5_circle_3 {
-            animation: demo5_circle_3 1s linear infinite normal;
-            -webkit-animation: demo5_circle_3 1s linear infinite normal;
-}
-    }
     .demo5_circle_box{
         position: relative;
         .demo5_circle_1{
@@ -428,6 +386,8 @@ body{
             position: absolute;
             transform:scale(0);
             opacity: 0;
+            animation: demo5_circle_1 1s linear infinite normal;
+            -webkit-animation: demo5_circle_1 1s linear infinite normal;
         }
         .demo5_circle_2{
             width: 64px;
@@ -437,6 +397,8 @@ body{
             position: absolute;
             transform: scale(0);
             opacity: 0;
+            animation: demo5_circle_2 1s linear infinite normal;
+            -webkit-animation: demo5_circle_2 1s linear infinite normal;
         }
         .demo5_circle_3{
             width: 64px;
@@ -446,6 +408,8 @@ body{
             position: absolute;
             transform: scale(0);
             opacity: 0;
+            animation: demo5_circle_3 1s linear infinite normal;
+            -webkit-animation: demo5_circle_3 1s linear infinite normal;
         }
     }
 }
@@ -481,7 +445,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    &:hover {
+    .demo6_circle_box{
+        display: flex;
+        .demo6_son{
+            width: 7px;
+            height: 32px;
+            background: #fff;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
         .demo6_son_1 {
             animation: demo6_son infinite 2s ease-in-out;
             -webkit-animation: demo6_son infinite 2s ease-in-out;
@@ -502,23 +475,6 @@ body{
             animation: demo6_son infinite 2s ease-in-out 1.2s;
             -webkit-animation: demo6_son infinite 2s ease-in-out 1.2s;
         }
-    }
-    .demo6_circle_box{
-        display: flex;
-        .demo6_son{
-            width: 7px;
-            height: 32px;
-            background: #fff;
-            &:not(:last-child) {
-                margin-right: 10px;
-            }
-        }
-        // .demo6_son_1{
-        //     width: 5px;
-        //     height: 64px;
-        //     background: #fff;
-        //     float: left;
-        // }
     }
 }
 
@@ -543,16 +499,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    &:hover{
-        .demo7_circle_box{
-            animation: demo_7  1s linear infinite alternate;
-            -webkit-animation: demo_7  1s linear infinite alternate;
-        }
-    }
     .demo7_circle_box{
         position: relative;
         width: 40px;
         height: 70px;
+        animation: demo_7  1s linear infinite alternate;
+        -webkit-animation: demo_7  1s linear infinite alternate;
         &:before{
             content: '';
             width: 30px;
@@ -613,13 +565,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    &:hover{
-        .demo8_circle_box{
-            animation: demo_8 3s linear infinite;
-            //linear//意思就是匀速的运动infinite//就是无限滚动的意思-webkit-animation:;
-            -webkit-animation: demo_8 3s linear infinite;
-        }
-    }
     .demo8_circle_box{
         position: relative;
         width: 30px;
@@ -631,6 +576,9 @@ body{
         -moz-border-radius: 100%;
         -ms-border-radius: 100%;
         -o-border-radius: 100%;
+        animation: demo_8 3s linear infinite;
+        //linear//意思就是匀速的运动infinite//就是无限滚动的意思-webkit-animation:;
+        -webkit-animation: demo_8 3s linear infinite;
         &:before{
             content: '';
             display: block;
@@ -715,5 +663,119 @@ body{
         right: 0;
 
         animation-delay: .15s;
+    }
+}
+
+// ----  10  ----
+@keyframes circle-side
+{
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+.demo_10{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    [data-loader='circle-side']
+    {
+        width: 64px;
+        height: 64px;
+        border: 4px solid #fff;
+        border-top-color: rgba(0,0,0,.2);
+        border-right-color: rgba(0,0,0,.2);
+        border-bottom-color: rgba(0,0,0,.2);
+        border-radius: 100%;
+        animation: circle-side 2s linear infinite;
+        -webkit-animation: circle-side 2s linear infinite;
+    }
+}
+
+// ----  11  ----
+@keyframes ball-rotate-between {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+    }
+}
+@keyframes ball-rotate {
+    from {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1);
+        -moz-transform: rotate(0deg) scale(1);
+        -ms-transform: rotate(0deg) scale(1);
+        -o-transform: rotate(0deg) scale(1);
+    }
+    to {
+        transform: rotate(360deg) scale(1.2);
+        -webkit-transform: rotate(360deg) scale(1.2);
+        -moz-transform: rotate(360deg) scale(1.2);
+        -ms-transform: rotate(360deg) scale(1.2);
+        -o-transform: rotate(360deg) scale(1.2);
+    }
+}
+.demo_11{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    [data-loader='ball-rotate']
+    {
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border-radius: 100%;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+        position: relative;
+        animation: ball-rotate 2s linear infinite;
+        -webkit-animation: ball-rotate 2s linear infinite;
+        &:before
+        {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 14px;
+            background: rgba(255, 255, 255, .8);
+            border-radius: 100%;
+            position: absolute;
+            left: 30px;
+            animation: ball-rotate-between 2s linear infinite;
+            -webkit-animation: ball-rotate-between 2s linear infinite;
+        }
+        &:after{
+            content: '';
+            display: block;
+            width: 14px;
+            height: 14px;
+            background: rgba(255, 255, 255, .8);
+            border-radius: 100%;
+            position: absolute;
+            right: 30px;
+            animation: ball-rotate-between 2s linear infinite;
+            -webkit-animation: ball-rotate-between 2s linear infinite;
+        }
     }
 }

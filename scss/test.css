@@ -37,16 +37,6 @@ body {
   border: 1px dashed #fff;
 }
 
-.demo_1:hover .redius_1_1 {
-  animation: rotate-redius_1 2s linear infinite;
-  -webkit-animation: rotate-redius_1 2s linear infinite;
-}
-
-.demo_1:hover .redius_1_2 {
-  animation: rotate-redius_2 1s linear infinite;
-  -webkit-animation: rotate-redius_2 1s linear infinite;
-}
-
 .demo_1 .demo_1_box {
   position: relative;
   top: 28px;
@@ -64,6 +54,8 @@ body {
   border-bottom-color: transparent;
   border-top-color: transparent;
   transform: rotate(30deg);
+  animation: rotate-redius_1 2s linear infinite;
+  -webkit-animation: rotate-redius_1 2s linear infinite;
 }
 
 .demo_1 .redius_1_2 {
@@ -78,6 +70,8 @@ body {
   border-top-color: transparent;
   border-radius: 100%;
   transform: rotate(-30deg);
+  animation: rotate-redius_2 1s linear infinite;
+  -webkit-animation: rotate-redius_2 1s linear infinite;
 }
 
 @keyframes rotate_2 {
@@ -95,17 +89,14 @@ body {
   align-items: center;
 }
 
-.demo_2:hover .redius_2_1 {
-  animation: rotate_2 1s linear infinite;
-  -webkit-animation: rotate_2 1s linear infinite;
-}
-
 .demo_2 .redius_2_1 {
   width: 64px;
   height: 64px;
   border: 4px solid #fff;
   border-radius: 100%;
   border-right-color: transparent;
+  animation: rotate_2 1s linear infinite;
+  -webkit-animation: rotate_2 1s linear infinite;
 }
 
 @keyframes rotate_3_1 {
@@ -153,31 +144,6 @@ body {
   }
 }
 
-.demo_3:hover .pacman_1 {
-  animation: rotate_3_1 0.5s linear infinite alternate;
-  -webkit-animation: rotate_3_1 0.5s linear infinite alternate;
-}
-
-.demo_3:hover .pacman_2 {
-  animation: rotate_3_2 0.5s linear infinite alternate;
-  -webkit-animation: rotate_3_2 0.5s linear infinite alternate;
-}
-
-.demo_3:hover .circle_1 {
-  animation: circle_1 0.5s linear infinite alternate;
-  -webkit-animation: circle_1 0.5s linear infinite alternate;
-}
-
-.demo_3:hover .circle_2 {
-  animation: circle_2 0.5s linear infinite alternate;
-  -webkit-animation: circle_2 0.5s linear infinite alternate;
-}
-
-.demo_3:hover .circle_3 {
-  animation: circle_3 0.5s linear infinite alternate;
-  -webkit-animation: circle_3 0.5s linear infinite alternate;
-}
-
 .demo_3 .pacman_box {
   position: relative;
   top: 32px;
@@ -193,6 +159,8 @@ body {
   top: 0;
   left: 0;
   transform: rotate(45deg);
+  animation: rotate_3_1 0.5s linear infinite alternate;
+  -webkit-animation: rotate_3_1 0.5s linear infinite alternate;
 }
 
 .demo_3 .pacman_box .pacman_2 {
@@ -205,6 +173,8 @@ body {
   top: 0;
   left: 0;
   transform: rotate(-45deg);
+  animation: rotate_3_2 0.5s linear infinite alternate;
+  -webkit-animation: rotate_3_2 0.5s linear infinite alternate;
 }
 
 .demo_3 .pacman_box .circle_1 {
@@ -216,6 +186,8 @@ body {
   right: 65px;
   border-radius: 100%;
   opacity: 0;
+  animation: circle_1 0.5s linear infinite alternate;
+  -webkit-animation: circle_1 0.5s linear infinite alternate;
 }
 
 .demo_3 .pacman_box .circle_2 {
@@ -227,6 +199,8 @@ body {
   right: 35px;
   border-radius: 100%;
   opacity: 0.5;
+  animation: circle_2 0.5s linear infinite alternate;
+  -webkit-animation: circle_2 0.5s linear infinite alternate;
 }
 
 .demo_3 .pacman_box .circle_3 {
@@ -237,6 +211,8 @@ body {
   top: 25px;
   right: 5px;
   border-radius: 100%;
+  animation: circle_3 0.5s linear infinite alternate;
+  -webkit-animation: circle_3 0.5s linear infinite alternate;
 }
 
 @keyframes demo4_circle_1 {
@@ -277,16 +253,6 @@ body {
   }
 }
 
-.demo_4:hover .demo4_circle_1 {
-  animation: demo4_circle_1 1s linear infinite alternate;
-  -webkit-animation: demo4_circle_1 1s linear infinite alternate;
-}
-
-.demo_4:hover .demo4_circle_2 {
-  animation: demo4_circle_2 1s linear infinite alternate;
-  -webkit-animation: demo4_circle_2 1s linear infinite alternate;
-}
-
 .demo_4 .demo4_circle_box {
   position: relative;
   top: 28px;
@@ -301,6 +267,8 @@ body {
   position: absolute;
   left: 15px;
   opacity: .5;
+  animation: demo4_circle_1 1s linear infinite alternate;
+  -webkit-animation: demo4_circle_1 1s linear infinite alternate;
 }
 
 .demo_4 .demo4_circle_box .demo4_circle_2 {
@@ -315,6 +283,8 @@ body {
   -moz-transform: scale(0);
   -ms-transform: scale(0);
   -o-transform: scale(0);
+  animation: demo4_circle_2 1s linear infinite alternate;
+  -webkit-animation: demo4_circle_2 1s linear infinite alternate;
 }
 
 @keyframes demo5_circle_1 {
@@ -422,21 +392,6 @@ body {
   }
 }
 
-.demo_5:hover .demo5_circle_1 {
-  animation: demo5_circle_1 1s linear infinite normal;
-  -webkit-animation: demo5_circle_1 1s linear infinite normal;
-}
-
-.demo_5:hover .demo5_circle_2 {
-  animation: demo5_circle_2 1s linear infinite normal;
-  -webkit-animation: demo5_circle_2 1s linear infinite normal;
-}
-
-.demo_5:hover .demo5_circle_3 {
-  animation: demo5_circle_3 1s linear infinite normal;
-  -webkit-animation: demo5_circle_3 1s linear infinite normal;
-}
-
 .demo_5 .demo5_circle_box {
   position: relative;
 }
@@ -449,6 +404,8 @@ body {
   position: absolute;
   transform: scale(0);
   opacity: 0;
+  animation: demo5_circle_1 1s linear infinite normal;
+  -webkit-animation: demo5_circle_1 1s linear infinite normal;
 }
 
 .demo_5 .demo5_circle_box .demo5_circle_2 {
@@ -459,6 +416,8 @@ body {
   position: absolute;
   transform: scale(0);
   opacity: 0;
+  animation: demo5_circle_2 1s linear infinite normal;
+  -webkit-animation: demo5_circle_2 1s linear infinite normal;
 }
 
 .demo_5 .demo5_circle_box .demo5_circle_3 {
@@ -469,6 +428,8 @@ body {
   position: absolute;
   transform: scale(0);
   opacity: 0;
+  animation: demo5_circle_3 1s linear infinite normal;
+  -webkit-animation: demo5_circle_3 1s linear infinite normal;
 }
 
 @keyframes demo6_son {
@@ -504,31 +465,6 @@ body {
   align-items: center;
 }
 
-.demo_6:hover .demo6_son_1 {
-  animation: demo6_son infinite 2s ease-in-out;
-  -webkit-animation: demo6_son infinite 2s ease-in-out;
-}
-
-.demo_6:hover .demo6_son_2 {
-  animation: demo6_son infinite 2s ease-in-out .3s;
-  -webkit-animation: demo6_son infinite 2s ease-in-out .3s;
-}
-
-.demo_6:hover .demo6_son_3 {
-  animation: demo6_son infinite 2s ease-in-out .6s;
-  -webkit-animation: demo6_son infinite 2s ease-in-out .6s;
-}
-
-.demo_6:hover .demo6_son_4 {
-  animation: demo6_son infinite 2s ease-in-out .9s;
-  -webkit-animation: demo6_son infinite 2s ease-in-out .9s;
-}
-
-.demo_6:hover .demo6_son_5 {
-  animation: demo6_son infinite 2s ease-in-out 1.2s;
-  -webkit-animation: demo6_son infinite 2s ease-in-out 1.2s;
-}
-
 .demo_6 .demo6_circle_box {
   display: flex;
 }
@@ -541,6 +477,31 @@ body {
 
 .demo_6 .demo6_circle_box .demo6_son:not(:last-child) {
   margin-right: 10px;
+}
+
+.demo_6 .demo6_circle_box .demo6_son_1 {
+  animation: demo6_son infinite 2s ease-in-out;
+  -webkit-animation: demo6_son infinite 2s ease-in-out;
+}
+
+.demo_6 .demo6_circle_box .demo6_son_2 {
+  animation: demo6_son infinite 2s ease-in-out .3s;
+  -webkit-animation: demo6_son infinite 2s ease-in-out .3s;
+}
+
+.demo_6 .demo6_circle_box .demo6_son_3 {
+  animation: demo6_son infinite 2s ease-in-out .6s;
+  -webkit-animation: demo6_son infinite 2s ease-in-out .6s;
+}
+
+.demo_6 .demo6_circle_box .demo6_son_4 {
+  animation: demo6_son infinite 2s ease-in-out .9s;
+  -webkit-animation: demo6_son infinite 2s ease-in-out .9s;
+}
+
+.demo_6 .demo6_circle_box .demo6_son_5 {
+  animation: demo6_son infinite 2s ease-in-out 1.2s;
+  -webkit-animation: demo6_son infinite 2s ease-in-out 1.2s;
 }
 
 @keyframes demo_7 {
@@ -566,15 +527,12 @@ body {
   align-items: center;
 }
 
-.demo_7:hover .demo7_circle_box {
-  animation: demo_7  1s linear infinite alternate;
-  -webkit-animation: demo_7  1s linear infinite alternate;
-}
-
 .demo_7 .demo7_circle_box {
   position: relative;
   width: 40px;
   height: 70px;
+  animation: demo_7  1s linear infinite alternate;
+  -webkit-animation: demo_7  1s linear infinite alternate;
 }
 
 .demo_7 .demo7_circle_box:before {
@@ -638,11 +596,6 @@ body {
   align-items: center;
 }
 
-.demo_8:hover .demo8_circle_box {
-  animation: demo_8 3s linear infinite;
-  -webkit-animation: demo_8 3s linear infinite;
-}
-
 .demo_8 .demo8_circle_box {
   position: relative;
   width: 30px;
@@ -654,6 +607,8 @@ body {
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
+  animation: demo_8 3s linear infinite;
+  -webkit-animation: demo_8 3s linear infinite;
 }
 
 .demo_8 .demo8_circle_box:before {
@@ -731,4 +686,119 @@ body {
 .demo_9 [data-loader='jumping']:after {
   right: 0;
   animation-delay: .15s;
+}
+
+@keyframes circle-side {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+.demo_10 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.demo_10 [data-loader='circle-side'] {
+  width: 64px;
+  height: 64px;
+  border: 4px solid #fff;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  animation: circle-side 2s linear infinite;
+  -webkit-animation: circle-side 2s linear infinite;
+}
+
+@keyframes ball-rotate-between {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+  }
+}
+
+@keyframes ball-rotate {
+  from {
+    transform: rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg) scale(1);
+    -moz-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    -o-transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.2);
+    -webkit-transform: rotate(360deg) scale(1.2);
+    -moz-transform: rotate(360deg) scale(1.2);
+    -ms-transform: rotate(360deg) scale(1.2);
+    -o-transform: rotate(360deg) scale(1.2);
+  }
+}
+
+.demo_11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.demo_11 [data-loader='ball-rotate'] {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  position: relative;
+  animation: ball-rotate 2s linear infinite;
+  -webkit-animation: ball-rotate 2s linear infinite;
+}
+
+.demo_11 [data-loader='ball-rotate']:before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 100%;
+  position: absolute;
+  left: 30px;
+  animation: ball-rotate-between 2s linear infinite;
+  -webkit-animation: ball-rotate-between 2s linear infinite;
+}
+
+.demo_11 [data-loader='ball-rotate']:after {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 100%;
+  position: absolute;
+  right: 30px;
+  animation: ball-rotate-between 2s linear infinite;
+  -webkit-animation: ball-rotate-between 2s linear infinite;
 }
