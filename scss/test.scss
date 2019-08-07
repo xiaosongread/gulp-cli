@@ -22,6 +22,16 @@
 body{
     background: #40479a;
 }
+.demo{
+    width: 120px;
+    height: 120px;
+    margin: 15px;
+    float: left;
+    &:hover {
+        border: 1px dashed #fff;
+    }
+}
+// ----  1  ----
 @keyframes rotate-redius_1
 {
     0% { transform:rotate(30deg); }
@@ -40,16 +50,6 @@ body{
         transform:rotate(-90deg);
 }
 }
-.demo{
-    width: 120px;
-    height: 120px;
-    margin: 15px;
-    float: left;
-    &:hover {
-        border: 1px dashed #fff;
-    }
-}
-// ----  1  ----
 .demo_1{
     .demo_1_box{
         position: relative;
