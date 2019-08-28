@@ -57,6 +57,7 @@
   clip-path: polygon(50% 0%, 64.43% 25%, 93.3% 25%, 78.87% 50%, 93.3% 75%, 64.43% 75%, 50% 100%, 35.57% 75%, 6.7% 75%, 21.13% 50%, 6.7% 25%, 35.57% 25%);
   z-index: 1;
   animation: sunScale 2s linear infinite;
+  -webkit-animation: sunScale 2s linear infinite;
 }
 
 .cloudy:before,
@@ -99,6 +100,16 @@
   animation: rainy 2s linear infinite;
 }
 
+@keyframes snowDrop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(25px);
+    box-shadow: #fff 25px -10px 0, #fff 50px 0 0, #fff 75px -10px 0, #fff 0 25px 0, #fff 25px 15px 0, #fff 50px 25px 0, #fff 75px 15px 0, rgba(255, 255, 255, 0) 0 50px 0, rgba(255, 255, 255, 0) 25px 40px 0, rgba(255, 255, 255, 0) 50px 50px 0, rgba(255, 255, 255, 0) 75px 40px 0;
+  }
+}
+
 .snowy:after {
   content: "";
   position: absolute;
@@ -110,14 +121,4 @@
   border-radius: 50%;
   box-shadow: #fff 25px -10px 0, #fff 50px 0 0, #fff 75px -10px 0, #fff 0 25px 0, #fff 25px 15px 0, #fff 50px 25px 0, #fff 75px 15px 0, #fff 0 50px 0, #fff 25px 40px 0, #fff 50px 50px 0, #fff 75px 40px 0;
   animation: snowDrop 2s linear infinite;
-}
-
-@keyframes snowDrop {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(25px);
-    box-shadow: #fff 25px -10px 0, #fff 50px 0 0, #fff 75px -10px 0, #fff 0 25px 0, #fff 25px 15px 0, #fff 50px 25px 0, #fff 75px 15px 0, rgba(255, 255, 255, 0) 0 50px 0, rgba(255, 255, 255, 0) 25px 40px 0, rgba(255, 255, 255, 0) 50px 50px 0, rgba(255, 255, 255, 0) 75px 40px 0;
-  }
 }
