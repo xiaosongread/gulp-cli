@@ -87,10 +87,6 @@ gulp.task('images',function(){
                .pipe(gulp.dest('dist/images')) // gulp.src('images/**/*') gulp.src('images/*/*'
 })
 
-// 清除dist文件夹
-gulp.task("clean",()=>{
-    del(["dist/"])
-})
 gulp.task('watch',function(){
     w('*.html',['prew']);
     w('htmlBlocks/*.html',['prew']);
@@ -116,12 +112,19 @@ gulp.task('server',function(){
 // 本地启动服务 gulp
 gulp.task('default',['server','watch']) // ['server','watch']
 
+// 清除dist文件夹
+gulp.task("clean",()=>{
+    return del(["dist"])
+})
+
 // 整体打包 gulp build
 gulp.task('build-start',['clean','prew','sass','buildJs','images', 'vendorJs'],function(){
     console.log("打包完成！")
 })
 gulp.task('build', () => { // 先清除dist文件夹在整体打包
-    return new Promise(resolve => {
-        runSequence(['clean'], 'build-start', resolve);
-    });
+    runSequence("clean",["build-start"])
+    // return new Promise(resolve => {
+    //     runSequence(['clean'], 'build-start', resolve);
+    // });
 });
+
