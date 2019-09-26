@@ -2,6 +2,10 @@ var gulp = require('gulp'),
 gulpLoadPlugins = require('gulp-load-plugins'),
 $ = gulpLoadPlugins()
 let batchReplace = require('gulp-batch-replace');
+let watch = require('gulp-watch');
+const browserSync = require('browser-sync').create();
+const runSequence = require('run-sequence');
+const del = require('del');
 
 const config = {
     //第三方代码
@@ -39,10 +43,10 @@ gulp.task('vendorJs', () => {
 });
   
 gulp.task('prew', function () {
-    return gulp.src(['*.html', '!modules/*.html','!node_modules/**/*.html'])
+    return gulp.src(['*.html', 'htmlBlocks/*.html', '!modules/*.html','!node_modules/**/*.html'])
                .pipe($.fileInclude({
                     prefix: '@@',
-                    basepath: '@file'
+                    basepath: './htmlBlocks/'
                 }))
                 // .pipe(batchReplace([{
                 //     "http://www.songyanbin.com":"localhost"
@@ -82,12 +86,24 @@ gulp.task('images',function(){
                .pipe($.imagemin())
                .pipe(gulp.dest('dist/images')) // gulp.src('images/**/*') gulp.src('images/*/*'
 })
+
+// 清除dist文件夹
+gulp.task("clean",()=>{
+    del(["dist/"])
+})
 gulp.task('watch',function(){
-    gulp.watch('*.html',['prew']);
-    gulp.watch('modules/*.html',['prew']);
-    gulp.watch('scss/**/*.scss',['sass']);
-    gulp.watch('js/**/*.js',['buildJs','vendorJs']);
-    gulp.watch('images/*.{jpg,png}',['images']);
+    w('*.html',['prew']);
+    w('htmlBlocks/*.html',['prew']);
+    w('modules/*.html',['prew']);
+    w('scss/**/*.scss',['sass']);
+    w('js/**/*.js',['buildJs','vendorJs']);
+    w('images/*.{jpg,png}',['images']);
+    function w(path, task){
+        $.watch(path, function () {
+            gulp.start(task);
+            browserSync.reload();
+        });
+    }
 })
 gulp.task('server',function(){
     $.connect.server({
@@ -97,7 +113,15 @@ gulp.task('server',function(){
         livereload: true //实时刷新开关
     })
 })
+// 本地启动服务 gulp
 gulp.task('default',['server','watch']) // ['server','watch']
-gulp.task('build',['prew','sass','buildJs','images', 'vendorJs'],function(){
+
+// 整体打包 gulp build
+gulp.task('build-start',['clean','prew','sass','buildJs','images', 'vendorJs'],function(){
     console.log("打包完成！")
 })
+gulp.task('build', () => { // 先清除dist文件夹在整体打包
+    return new Promise(resolve => {
+        runSequence(['clean'], 'build-start', resolve);
+    });
+});
