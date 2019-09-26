@@ -11,9 +11,9 @@ const config = {
     //第三方代码
     vendor: [
         'vendor/jquery/jquery.js',
-        'vendor/jquery/jquery.cookie.js',
-        'vendor/jquery/jquery.validate.js',
-        'vendor/swiper/swiper-2.7.6.js'
+        'vendor/template/art-template-web.js',
+        // 'vendor/jquery/jquery.validate.js',
+        // 'vendor/swiper/swiper-2.7.6.js'
     ],
     vendor_css: [
         'vendor/swiper/swiper-2.7.6.css'
@@ -93,6 +93,7 @@ gulp.task('watch',function(){
     w('modules/*.html',['prew']);
     w('scss/**/*.scss',['sass']);
     w('js/**/*.js',['buildJs','vendorJs']);
+    w('vendor/**/*.js',['images']);
     w('images/*.{jpg,png}',['images']);
     function w(path, task){
         $.watch(path, function () {

@@ -7,15 +7,33 @@
   <title>Document</title>
   @@include('css.html')
   <link rel="stylesheet" href="./css/template.css">
+  <script src="./vendor/vendor.js"></script>
 </head>
 <body>
   @@include('header.html')
   <p>template.html</p>
+  <div id="container"></div>
+  <script type="text/html" id="template_test">
+    <ul>
+      {{each dataList}}
+      <li>{{$value.name}}{{$value.age}}</li>
+      {{/each}}
+    </ul>
+  </script>
   @@include('footer.html')
 </body>
 <script>
-let a = 3
-let b = 2
-console.log(a + b)
+$(function(){
+  let list = [{
+    name: 'zhangsan',
+    age: 12
+  },{
+    name: 'lisi',
+    age: 34
+  }]
+  let html = template('template_test', {dataList: list})
+  var container = document.querySelector('#container')
+  container.innerHTML = html
+})
 </script>
 </html>
