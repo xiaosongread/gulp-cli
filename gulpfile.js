@@ -1,11 +1,39 @@
 var gulp = require('gulp'),
 gulpLoadPlugins = require('gulp-load-plugins'),
 $ = gulpLoadPlugins()
+let preprocess = require("gulp-preprocess");
 let batchReplace = require('gulp-batch-replace');
 let watch = require('gulp-watch');
 const browserSync = require('browser-sync').create();
 const runSequence = require('run-sequence');
 const del = require('del');
+const file = './config/api.js';
+
+//开发测试版本
+gulp.task("development", function() {
+    gulp
+      .src([file])
+      .pipe(preprocess({
+        context:{
+          NODE_ENV: process.env.NODE_ENV || "development"
+        }
+      }))
+      .pipe($.uglify()) //压缩
+      .pipe(gulp.dest("./dist/config"));
+});
+
+//生产版本
+gulp.task("production", function() {
+    gulp
+      .src([file])
+      .pipe(preprocess({
+        context:{
+          NODE_ENV: process.env.NODE_ENV || "production"
+        }
+      }))
+      .pipe($.uglify()) //压缩
+      .pipe(gulp.dest("./dist/config"));
+});
 
 const config = {
     //第三方代码
@@ -42,7 +70,7 @@ gulp.task('vendorJs', () => {
     //   .pipe($.if(dev,gulp.dest('.tmp/scripts'),gulp.dest('dist/scripts')))
 });
   
-gulp.task('prew', function () {
+gulp.task('html', function () {
     return gulp.src(['*.html', 'htmlBlocks/*.html', '!modules/*.html','!node_modules/**/*.html'])
                .pipe($.fileInclude({
                     prefix: '@@',
@@ -54,6 +82,7 @@ gulp.task('prew', function () {
                 .pipe(gulp.dest('dist'))
                 .pipe($.connect.reload());
 })
+
 // scss
 function notify(err) {
     // prevent gulp process exit
@@ -71,6 +100,7 @@ gulp.task("sass",function(){
                .pipe(gulp.dest('dist/css'))
 })
 
+// js
 gulp.task("buildJs",function(){
     return gulp.src("js/**/*.js")
                 .pipe($.babel({
@@ -80,6 +110,20 @@ gulp.task("buildJs",function(){
                 .pipe(gulp.dest('dist/js'))
                 .pipe($.connect.reload());
 })
+gulp.task("apiJs",function(){
+    gulp
+      .src([file])
+      .pipe(preprocess({
+        context:{
+          NODE_ENV: process.env.NODE_ENV || "development"
+        }
+      }))
+      .pipe($.uglify()) //压缩
+      .pipe(gulp.dest("./dist/config"))
+      .pipe($.connect.reload());
+})
+
+// images
 gulp.task('images',function(){
     //return gulp.src('images/*.jpg').pipe(gulp.dest('dest/images')) // 匹配所有.jpg的图片
     return gulp.src('images/**/*')
@@ -87,12 +131,14 @@ gulp.task('images',function(){
                .pipe(gulp.dest('dist/images')) // gulp.src('images/**/*') gulp.src('images/*/*'
 })
 
+// 监听文件变化
 gulp.task('watch',function(){
-    w('*.html',['prew']);
-    w('htmlBlocks/*.html',['prew']);
-    w('modules/*.html',['prew']);
+    w('*.html',['html']);
+    w('htmlBlocks/*.html',['html']);
+    w('modules/*.html',['html']);
     w('scss/**/*.scss',['sass']);
     w('js/**/*.js',['buildJs','vendorJs']);
+    w('config/*.js',['apiJs']);
     w('vendor/**/*.js',['images']);
     w('images/*.{jpg,png}',['images']);
     function w(path, task){
@@ -102,16 +148,30 @@ gulp.task('watch',function(){
         });
     }
 })
-gulp.task('server',function(){
-    $.connect.server({
-        root: './dist',
-        port: '8888',
-        open: true,
-        livereload: true //实时刷新开关
+// gulp.task('server',function(){
+//     $.connect.server({
+//         root: './dist',
+//         port: '8888',
+//         open: true,
+//         livereload: true //实时刷新开关
+//     })
+// })
+// 解决第一次使用没反应报错（先打包在启动服务）
+gulp.task('server', () => {
+    runSequence('clean', 'build-start', () => {
+        $.connect.server({
+            root: './dist',
+            port: '8888',
+            open: true,
+            livereload: true //实时刷新开关
+        })
     })
-})
+});
+
 // 本地启动服务 gulp
-gulp.task('default',['server','watch']) // ['server','watch']
+gulp.task('default', () => {
+    runSequence('clean', ['development', 'server','watch'])
+}) // ['server','watch']
 
 // 清除dist文件夹
 gulp.task("clean",()=>{
@@ -119,11 +179,14 @@ gulp.task("clean",()=>{
 })
 
 // 整体打包 gulp build
-gulp.task('build-start',['clean','prew','sass','buildJs','images', 'vendorJs'],function(){
+gulp.task('build-start',['clean','html','sass','buildJs','images', 'vendorJs'],function(){
+    console.info("gulp前端模板")
+    console.warn("如有问题，请提issues帮忙完善")
+    console.info("地址：https://github.com/xiaosongread/github-xiaosongread-hexo")
     console.log("打包完成！")
 })
 gulp.task('build', () => { // 先清除dist文件夹在整体打包
-    runSequence("clean",["build-start"])
+    runSequence("clean",["production","build-start"])
     // return new Promise(resolve => {
     //     runSequence(['clean'], 'build-start', resolve);
     // });
