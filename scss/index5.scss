@@ -1,6 +1,9 @@
 $green: green;
 $red: red;
 $purple: purple;
+body{
+	margin: 0;
+}
 .operation{
 	width: 100%;
 	height: 100%;
@@ -9,18 +12,32 @@ $purple: purple;
 	left: 0;
 	bottom: 0;
 	right: 0;
+	.line{
+		width: 100%;
+		height: 1px;
+		background: #dddddd;
+	}
 	.cross{
 		width: 100%;
 		height: 7px;
-		position: relative;
+		position: absolute;
+		top: 100px;
+		left: 0;
 		.line{
-			width: 100%;
-			height: 1px;
+			margin: 3px 0;
+		}
+	}
+	.vertical{
+		width: 7px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 100px;
+		.line{
+			width: 1px;
+			height: 100%;
 			background: #dddddd;
 			margin: 0 3px;
-			position: absolute;
-			top: 100px;
-			left: 0;
 		}
 	}
 }

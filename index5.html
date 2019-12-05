@@ -9,25 +9,38 @@
   <script src="./vendor/vendor.js"></script>
 </head>
 <body>
-  <div class="canvas"></div>
+  <div class="canvas">
+    <div style="height: 300px;background: red;"></div>
+    <div style="height: 300px;background: blue;"></div>
+    <div style="height: 300px;background: yellow;"></div>
+  </div>
   <div class="operation">
-    <div class="cross">
+    <div class="cross cross_1" style="top: 50px;">
       <div class="line"></div>
     </div>
-    <div class="cross">
+    <div class="cross cross_2">
       <div class="line"></div>
     </div>
-    <div class="vertical">
-      <div class="line"></div>
+    <div class="vertical vertical_1" style="left: 50px;">
+      <div class="line vertical_line_1"></div>
     </div>
-    <div class="vertical">
-      <div class="line"></div>
+    <div class="vertical vertical_2">
+      <div class="line vertical_line_2"></div>
     </div>
   </div>
 </body>
 <script>
-window.onReady = function () {
-
+window.onload = function () {
+  var cross_1 = document.querySelector('.cross_1')
+  var cross_2 = document.querySelector('.cross_1')
+  var vertical_1 = document.querySelector('.vertical_1')
+  var vertical_2 = document.querySelector('.vertical_2')
+  var vertical_line_2 = document.querySelector('.vertical_line_2')
+  window.addEventListener('touchmove', function(ev){
+    if (ev.target.parentNode === vertical_2 || ev.target.parentNode === vertical_line_2){
+      console.log('第二条竖线')
+    }
+  })
 }
 </script>
 </html>
