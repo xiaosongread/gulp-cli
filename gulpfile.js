@@ -161,6 +161,7 @@ gulp.task('server', () => {
     runSequence('clean', 'build-start', () => {
         $.connect.server({
             root: './dist',
+            host: '0.0.0.0',
             port: '8888',
             open: true,
             livereload: true //实时刷新开关

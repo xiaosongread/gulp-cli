@@ -24,6 +24,7 @@ body{
 		position: absolute;
 		top: 400px;
 		left: 0;
+		background: red;
 		.line{
 			margin: 3px 0;
 			&:hover{
@@ -52,6 +53,7 @@ body{
 		position: absolute;
 		top: 0;
 		left: 100px;
+		background: red;
 		.line{
 			width: 1px;
 			height: 100%;
